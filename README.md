@@ -83,3 +83,15 @@ Học viên nhanh: làm hết 3 cấp + 6 checkpoint để đạt 100. Học vi�
 
 `REPORT.md` + `guideline-mini-sheet.md` + `reports/scorecard.json` + `reports/SCORECARD.md`
 + các export của bạn. **Không** đưa `groundtruth/` (đáp án) vào bài nộp.
+
+> **Nộp export nhãn:** mặc định `.gitignore` bỏ qua `submissions/` và `*.zip` (giữ kho gọn khi luyện).
+> Để commit bài, **gỡ hai dòng đó khỏi `.gitignore`** rồi thêm export:
+> ```bash
+> # trong .gitignore, xoá (hoặc comment) 2 dòng:
+> #   submissions/
+> #   *.zip
+> git add submissions/*.zip
+> git commit -m "nộp bài Ngày 5"
+> git push
+> ```
+> Chỉ commit export của **bạn** (`submissions/<task>.zip`) — tuyệt đối **không** commit `groundtruth/`.
