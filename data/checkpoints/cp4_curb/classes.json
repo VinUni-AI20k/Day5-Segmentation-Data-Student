@@ -1,0 +1,23 @@
+{
+  "type": "semantic",
+  "classes": [
+    "road",
+    "sidewalk"
+  ],
+  "trainid": {
+    "road": 0,
+    "sidewalk": 1
+  },
+  "colors": {
+    "road": [
+      128,
+      64,
+      128
+    ],
+    "sidewalk": [
+      244,
+      35,
+      232
+    ]
+  }
+}

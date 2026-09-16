@@ -1,0 +1,55 @@
+{
+  "tasks": {
+    "easy_semantic": {
+      "type": "semantic",
+      "weight": 20,
+      "path": "tiers/easy_semantic"
+    },
+    "medium_instance": {
+      "type": "instance",
+      "weight": 32,
+      "path": "tiers/medium_instance"
+    },
+    "hard_panoptic": {
+      "type": "panoptic",
+      "weight": 30,
+      "path": "tiers/hard_panoptic"
+    },
+    "cp1_holes": {
+      "type": "instance",
+      "weight": 3,
+      "edge": "Holes: windows/gaps stay inside the mask — do NOT cut them out.",
+      "path": "checkpoints/cp1_holes"
+    },
+    "cp2_slice": {
+      "type": "instance",
+      "weight": 3,
+      "edge": "Slice: adjacent same-class vehicles must be separate instances.",
+      "path": "checkpoints/cp2_slice"
+    },
+    "cp5_occlusion": {
+      "type": "instance",
+      "weight": 3,
+      "edge": "Occlusion: an object split by another is still ONE mask; count instances right.",
+      "path": "checkpoints/cp5_occlusion"
+    },
+    "cp3_thin": {
+      "type": "semantic",
+      "weight": 3,
+      "edge": "Thin structures: poles/signs need a 2-3px brush.",
+      "path": "checkpoints/cp3_thin"
+    },
+    "cp4_curb": {
+      "type": "semantic",
+      "weight": 3,
+      "edge": "Curb: road vs sidewalk is a functional boundary, same asphalt.",
+      "path": "checkpoints/cp4_curb"
+    },
+    "cp6_coverage": {
+      "type": "semantic",
+      "weight": 3,
+      "edge": "Coverage: label every pixel — no unlabeled gaps (check coverage %).",
+      "path": "checkpoints/cp6_coverage"
+    }
+  }
+}

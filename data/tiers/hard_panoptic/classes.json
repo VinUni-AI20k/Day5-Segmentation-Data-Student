@@ -1,0 +1,100 @@
+{
+  "type": "panoptic",
+  "classes": [
+    "road",
+    "sidewalk",
+    "building",
+    "vegetation",
+    "sky",
+    "person",
+    "car",
+    "bus",
+    "truck",
+    "motorcycle",
+    "bicycle",
+    "traffic light"
+  ],
+  "stuff": [
+    "road",
+    "sidewalk",
+    "building",
+    "vegetation",
+    "sky"
+  ],
+  "catid2name": {
+    "1": "person",
+    "2": "bicycle",
+    "3": "car",
+    "4": "motorcycle",
+    "6": "bus",
+    "8": "truck",
+    "10": "traffic light",
+    "149": "road",
+    "184": "vegetation",
+    "187": "sky",
+    "191": "sidewalk",
+    "197": "building"
+  },
+  "colors": {
+    "road": [
+      128,
+      64,
+      128
+    ],
+    "sidewalk": [
+      244,
+      35,
+      232
+    ],
+    "building": [
+      70,
+      70,
+      70
+    ],
+    "vegetation": [
+      107,
+      142,
+      35
+    ],
+    "sky": [
+      70,
+      130,
+      180
+    ],
+    "person": [
+      220,
+      20,
+      60
+    ],
+    "car": [
+      0,
+      0,
+      142
+    ],
+    "bus": [
+      0,
+      60,
+      100
+    ],
+    "truck": [
+      0,
+      0,
+      70
+    ],
+    "motorcycle": [
+      0,
+      0,
+      230
+    ],
+    "bicycle": [
+      119,
+      11,
+      32
+    ],
+    "traffic light": [
+      250,
+      170,
+      30
+    ]
+  }
+}

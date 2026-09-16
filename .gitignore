@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.DS_Store
+# instructor-only ground truth (answers — never distribute to students)
+data/tiers/**/groundtruth/
+data/checkpoints/**/groundtruth/
+# archived / retired data (e.g. old graded set), kept locally, out of the repo
+data/_archive/
+# local student working files / submissions
+submissions/
+*.zip
+# large upstream caches
+data/_cache/

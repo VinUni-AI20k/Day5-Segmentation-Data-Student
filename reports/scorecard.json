@@ -1,0 +1,88 @@
+{
+  "total": 0.0,
+  "max": 100,
+  "cheat_flags": [],
+  "tasks": {
+    "easy_semantic": {
+      "type": "semantic",
+      "group": "tiers",
+      "points": 0.0,
+      "weight": 20,
+      "value": null,
+      "flags": [],
+      "missing": true
+    },
+    "medium_instance": {
+      "type": "instance",
+      "group": "tiers",
+      "points": 0.0,
+      "weight": 32,
+      "value": null,
+      "flags": [],
+      "missing": true
+    },
+    "hard_panoptic": {
+      "type": "panoptic",
+      "group": "tiers",
+      "points": 0.0,
+      "weight": 30,
+      "value": null,
+      "flags": [],
+      "missing": true
+    },
+    "cp1_holes": {
+      "type": "instance",
+      "group": "checkpoints",
+      "points": 0.0,
+      "weight": 3,
+      "value": null,
+      "flags": [],
+      "missing": true
+    },
+    "cp2_slice": {
+      "type": "instance",
+      "group": "checkpoints",
+      "points": 0.0,
+      "weight": 3,
+      "value": null,
+      "flags": [],
+      "missing": true
+    },
+    "cp5_occlusion": {
+      "type": "instance",
+      "group": "checkpoints",
+      "points": 0.0,
+      "weight": 3,
+      "value": null,
+      "flags": [],
+      "missing": true
+    },
+    "cp3_thin": {
+      "type": "semantic",
+      "group": "checkpoints",
+      "points": 0.0,
+      "weight": 3,
+      "value": null,
+      "flags": [],
+      "missing": true
+    },
+    "cp4_curb": {
+      "type": "semantic",
+      "group": "checkpoints",
+      "points": 0.0,
+      "weight": 3,
+      "value": null,
+      "flags": [],
+      "missing": true
+    },
+    "cp6_coverage": {
+      "type": "semantic",
+      "group": "checkpoints",
+      "points": 0.0,
+      "weight": 3,
+      "value": null,
+      "flags": [],
+      "missing": true
+    }
+  }
+}

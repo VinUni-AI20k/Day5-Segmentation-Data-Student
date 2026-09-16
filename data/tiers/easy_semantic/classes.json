@@ -1,0 +1,44 @@
+{
+  "type": "semantic",
+  "classes": [
+    "road",
+    "sidewalk",
+    "building",
+    "vegetation",
+    "sky"
+  ],
+  "trainid": {
+    "road": 0,
+    "sidewalk": 1,
+    "building": 2,
+    "vegetation": 8,
+    "sky": 10
+  },
+  "colors": {
+    "road": [
+      128,
+      64,
+      128
+    ],
+    "sidewalk": [
+      244,
+      35,
+      232
+    ],
+    "building": [
+      70,
+      70,
+      70
+    ],
+    "vegetation": [
+      107,
+      142,
+      35
+    ],
+    "sky": [
+      70,
+      130,
+      180
+    ]
+  }
+}
