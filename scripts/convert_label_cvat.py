@@ -17,6 +17,16 @@ def convert_to_cvat_raw(input_filename, output_filename):
     cvat_labels = []
     colors_dict = data.get("colors", {})
 
+    # Segmentation mask 1.1 maps void/ignore pixels to (0,0,0) = "background".
+    # CVAT requires this label to exist before importing seg-mask GT or exports.
+    if data.get("type") == "semantic":
+        cvat_labels.append({
+            "name": "background",
+            "color": "#000000",
+            "attributes": [],
+            "type": "any",
+        })
+
     # Iterate through the classes and build the CVAT format
     for class_name in data.get("classes", []):
         # Convert the RGB array to a Hex string, defaulting to black if missing
@@ -36,6 +46,8 @@ def convert_to_cvat_raw(input_filename, output_filename):
         json.dump(cvat_labels, f, indent=4)
     
     print(f"Successfully converted labels and saved to '{output_filename}'.")
+    print(f"  type: {data.get('type', '?')}  labels: {len(cvat_labels)}  "
+          f"({', '.join(x['name'] for x in cvat_labels)})")
 
 if __name__ == "__main__":
     # Set up argument parsing for command line usage

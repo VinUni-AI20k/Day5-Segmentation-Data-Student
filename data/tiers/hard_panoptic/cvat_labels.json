@@ -1,0 +1,74 @@
+[
+    {
+        "name": "road",
+        "color": "#804080",
+        "attributes": [],
+        "type": "any"
+    },
+    {
+        "name": "sidewalk",
+        "color": "#f423e8",
+        "attributes": [],
+        "type": "any"
+    },
+    {
+        "name": "building",
+        "color": "#464646",
+        "attributes": [],
+        "type": "any"
+    },
+    {
+        "name": "vegetation",
+        "color": "#6b8e23",
+        "attributes": [],
+        "type": "any"
+    },
+    {
+        "name": "sky",
+        "color": "#4682b4",
+        "attributes": [],
+        "type": "any"
+    },
+    {
+        "name": "person",
+        "color": "#dc143c",
+        "attributes": [],
+        "type": "any"
+    },
+    {
+        "name": "car",
+        "color": "#00008e",
+        "attributes": [],
+        "type": "any"
+    },
+    {
+        "name": "bus",
+        "color": "#003c64",
+        "attributes": [],
+        "type": "any"
+    },
+    {
+        "name": "truck",
+        "color": "#000046",
+        "attributes": [],
+        "type": "any"
+    },
+    {
+        "name": "motorcycle",
+        "color": "#0000e6",
+        "attributes": [],
+        "type": "any"
+    },
+    {
+        "name": "bicycle",
+        "color": "#770b20",
+        "attributes": [],
+        "type": "any"
+    },
+    {
+        "name": "traffic light",
+        "color": "#faaa1e",
+        "attributes": [],
+        "type": "any"
+    }
+]

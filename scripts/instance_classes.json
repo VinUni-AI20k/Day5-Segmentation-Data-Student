@@ -1,37 +1,37 @@
 [
     {
-        "name": "background",
+        "name": "person",
         "color": "#000000",
         "attributes": [],
         "type": "any"
     },
     {
-        "name": "road",
-        "color": "#804080",
+        "name": "bicycle",
+        "color": "#000000",
         "attributes": [],
         "type": "any"
     },
     {
-        "name": "sidewalk",
-        "color": "#f423e8",
+        "name": "car",
+        "color": "#000000",
         "attributes": [],
         "type": "any"
     },
     {
-        "name": "building",
-        "color": "#464646",
+        "name": "motorcycle",
+        "color": "#000000",
         "attributes": [],
         "type": "any"
     },
     {
-        "name": "vegetation",
-        "color": "#6b8e23",
+        "name": "bus",
+        "color": "#000000",
         "attributes": [],
         "type": "any"
     },
     {
-        "name": "sky",
-        "color": "#4682b4",
+        "name": "truck",
+        "color": "#000000",
         "attributes": [],
         "type": "any"
     }

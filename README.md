@@ -53,10 +53,15 @@ python scripts/convert_label_cvat.py \
   -i data/tiers/easy_semantic/classes.json \
   -o data/tiers/easy_semantic/cvat_labels.json
 
-# Ví dụ: Medium instance
+# Ví dụ: Medium instance (6 lớp things)
 python scripts/convert_label_cvat.py \
   -i data/tiers/medium_instance/classes.json \
   -o data/tiers/medium_instance/cvat_labels.json
+
+# Ví dụ: Hard panoptic (12 lớp = 5 stuff + 7 things — KHÔNG dùng instance_classes.json)
+python scripts/convert_label_cvat.py \
+  -i data/tiers/hard_panoptic/classes.json \
+  -o data/tiers/hard_panoptic/cvat_labels.json
 
 # Ví dụ: một checkpoint
 python scripts/convert_label_cvat.py \
@@ -64,12 +69,32 @@ python scripts/convert_label_cvat.py \
   -o data/checkpoints/cp1_holes/cvat_labels.json
 ```
 
+| Cấp / loại | Số lớp | File mẫu trong `scripts/` |
+| --- | ---: | --- |
+| Semantic (easy + cp semantic) | 5–7 + `background` | `semantic_classes.json` |
+| Instance (medium + cp instance) | 6 things | `instance_classes.json` |
+| Panoptic (hard) | **12** (stuff + things) | `panoptic_classes.json` |
+
 Tham số: `-i` / `--input` = `classes.json` của task; `-o` / `--output` = file CVAT Raw (mặc định
 `cvat_raw_labels.json` nếu không chỉ định). Script đọc mảng `classes` và map `colors` (RGB) sang hex;
 lớp không có màu trong JSON sẽ dùng đen `#000000`.
 
 **Trong CVAT:** tạo **Project** → tab **Labels** → **Import** → chọn định dạng **Raw** → upload file
-`cvat_labels.json` vừa tạo. Mẫu đầu ra cho easy semantic: `scripts/semantic_classes.json`.
+`cvat_labels.json` vừa tạo (hoặc file mẫu ở bảng trên). Tên lớp phải **khớp từng chữ** với GT/export.
+
+> **Semantic tasks:** `convert_label_cvat.py` tự thêm lớp `background` (#000000). CVAT bắt buộc
+> có lớp này khi import/export **Segmentation mask 1.1** (pixel void/ignore = đen). Nếu task đã tạo
+> mà thiếu `background`, thêm thủ công trong tab Labels hoặc import lại `cvat_labels.json`.
+
+**Upload ground truth:** đóng gói bằng `scripts/pack_cvat_gt.py`, rồi **Actions → Upload annotations**:
+
+| Loại | Định dạng CVAT | File GT |
+| --- | --- | --- |
+| Semantic | **Segmentation mask 1.1** | `data/.../cvat_gt_segmask.zip` |
+| Instance / Panoptic | **COCO 1.0** | `data/.../cvat_gt_coco.zip` |
+
+Panoptic GT chứa cả lớp stuff (`building`, `road`, `sky`…) — task phải có **đủ 12 lớp** từ
+`panoptic_classes.json`, không chỉ 6 lớp instance.
 
 Lặp lại cho từng cấp/checkpoint trước khi tạo task và tải ảnh từ thư mục `images/` tương ứng.
 
