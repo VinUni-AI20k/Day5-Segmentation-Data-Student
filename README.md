@@ -40,6 +40,39 @@ Khác với bài chỉ "vẽ cho xong": bạn nộp nhãn, hệ thống **chấm
 - **CVAT** cục bộ (xem `CVAT_SETUP.md`). Có thể bật **AI Tools → Segment Anything** để tô nhanh rồi sửa.
 - **conda env `ai-lab`** cho bộ chấm điểm: `~/miniconda3/envs/ai-lab/bin/python -m pip install -r requirements.txt`.
 
+## Import nhãn vào CVAT (từ `classes.json`)
+
+Mỗi task/cấp có file `classes.json` kèm ảnh (ví dụ `data/tiers/easy_semantic/classes.json`,
+`data/tiers/medium_instance/classes.json`, `data/checkpoints/cp1_holes/classes.json`…). Dùng script
+`scripts/convert_label_cvat.py` để đổi sang **CVAT Raw** (tên lớp + màu hex) rồi import vào project CVAT —
+không cần gõ tay từng lớp.
+
+```bash
+# Ví dụ: Easy semantic (5 lớp stuff)
+python scripts/convert_label_cvat.py \
+  -i data/tiers/easy_semantic/classes.json \
+  -o data/tiers/easy_semantic/cvat_labels.json
+
+# Ví dụ: Medium instance
+python scripts/convert_label_cvat.py \
+  -i data/tiers/medium_instance/classes.json \
+  -o data/tiers/medium_instance/cvat_labels.json
+
+# Ví dụ: một checkpoint
+python scripts/convert_label_cvat.py \
+  -i data/checkpoints/cp1_holes/classes.json \
+  -o data/checkpoints/cp1_holes/cvat_labels.json
+```
+
+Tham số: `-i` / `--input` = `classes.json` của task; `-o` / `--output` = file CVAT Raw (mặc định
+`cvat_raw_labels.json` nếu không chỉ định). Script đọc mảng `classes` và map `colors` (RGB) sang hex;
+lớp không có màu trong JSON sẽ dùng đen `#000000`.
+
+**Trong CVAT:** tạo **Project** → tab **Labels** → **Import** → chọn định dạng **Raw** → upload file
+`cvat_labels.json` vừa tạo. Mẫu đầu ra cho easy semantic: `scripts/semantic_classes.json`.
+
+Lặp lại cho từng cấp/checkpoint trước khi tạo task và tải ảnh từ thư mục `images/` tương ứng.
+
 ## Lịch thực hành 240 phút (gợi ý)
 
 | Phút | Hoạt động |
